@@ -1,0 +1,5 @@
+{
+  "name": "Endecja Knowledge Graph Agent",
+  "description": "An advanced, agentic knowledge graph builder for the Endecja movement, featuring historical persona chat (Roman Dmowski), real-time graph centrality analysis, and Gemini-powered graph expansion.",
+  "requestFramePermissions": []
+}

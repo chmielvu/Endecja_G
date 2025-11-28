@@ -1,0 +1,127 @@
+import { Node, Edge } from './types';
+
+export const INITIAL_DATA: { nodes: Node[]; edges: Edge[] } = {
+  nodes: [
+    {
+      id: "dmowski_roman",
+      label: "Roman Dmowski",
+      type: "person",
+      dates: "1864-1939",
+      description: "Założyciel i główny ideolog Endecji. Twórca Ligi Narodowej (1893), przywódca Komitetu Narodowego Polskiego.",
+      importance: 1.0,
+    },
+    {
+      id: "poplawski_jan",
+      label: "Jan Ludwik Popławski",
+      type: "person",
+      dates: "1854-1908",
+      description: "Współzałożyciel Ligi Narodowej i główny teoretyk polskiego nacjonalizmu. Redaktor 'Przeglądu Wszechpolskiego'.",
+      importance: 0.9,
+    },
+    {
+      id: "balicki_zygmunt",
+      label: "Zygmunt Balicki",
+      type: "person",
+      dates: "1858-1916",
+      description: "Ideolog egoizmu narodowego i współzałożyciel Ligi Narodowej. Autor 'Egoizmu narodowego wobec etyki'.",
+      importance: 0.85,
+    },
+    {
+      id: "pilsudski_jozef",
+      label: "Józef Piłsudski",
+      type: "person",
+      dates: "1867-1935",
+      description: "RYWAL Dmowskiego. Przywódca obozu sanacyjnego. Propagował federalizm.",
+      importance: 0.95,
+    },
+    {
+      id: "liga_narodowa",
+      label: "Liga Narodowa",
+      type: "organization",
+      dates: "1893-1928",
+      description: "Tajna organizacja założona przez Dmowskiego, Popławskiego i Balickiego.",
+      importance: 1.0,
+    },
+    {
+      id: "snd",
+      label: "Stronnictwo Narodowo-Demokratyczne",
+      type: "organization",
+      dates: "1897-1919",
+      description: "Partia Narodowo-Demokratyczna. Jawne skrzydło polityczne Ligi Narodowej.",
+      importance: 0.9,
+    },
+    {
+      id: "owp",
+      label: "Obóz Wielkiej Polski",
+      type: "organization",
+      dates: "1926-1933",
+      description: "Masowy ruch narodowy założony przez Dmowskiego w 1926.",
+      importance: 0.8,
+    },
+    {
+      id: "mlodziez_wszechpolska",
+      label: "Młodzież Wszechpolska",
+      type: "organization",
+      dates: "1922-1939",
+      description: "Organizacja młodzieżowa ruchu narodowego.",
+      importance: 0.75,
+    },
+    {
+      id: "konferencja_paryska",
+      label: "Konferencja Pokojowa",
+      type: "event",
+      dates: "1919",
+      description: "Dmowski reprezentował Polskę, walcząc o granice zachodnie.",
+      importance: 1.0,
+    },
+    {
+      id: "zamach_majowy",
+      label: "Zamach Majowy",
+      type: "event",
+      dates: "1926-05",
+      description: "Przejęcie władzy przez Piłsudskiego.",
+      importance: 0.9,
+    },
+    {
+      id: "mysli_polaka",
+      label: "Myśli nowoczesnego Polaka",
+      type: "publication",
+      dates: "1903",
+      description: "Manifest polskiego nacjonalizmu.",
+      importance: 1.0,
+    },
+    {
+      id: "egoizm_narodowy_concept",
+      label: "Egoizm Narodowy",
+      type: "concept",
+      description: "Koncepcja Balickiego: etyka narodu ponad etyką jednostki.",
+      importance: 0.9,
+    },
+    {
+      id: "koncepcja_piastowska",
+      label: "Koncepcja Piastowska",
+      type: "concept",
+      description: "Wizja Polski opartej na ziemiach zachodnich, jednolitej etnicznie.",
+      importance: 0.85,
+    }
+  ],
+  edges: [
+    { source: "dmowski_roman", target: "liga_narodowa", label: "założył" },
+    { source: "poplawski_jan", target: "liga_narodowa", label: "współzałożył" },
+    { source: "balicki_zygmunt", target: "liga_narodowa", label: "współzałożył" },
+    { source: "dmowski_roman", target: "egoizm_narodowy_concept", label: "propagował" },
+    { source: "balicki_zygmunt", target: "egoizm_narodowy_concept", label: "sformułował" },
+    { source: "dmowski_roman", target: "koncepcja_piastowska", label: "opracował" },
+    { source: "liga_narodowa", target: "snd", label: "przekształciła się" },
+    { source: "dmowski_roman", target: "snd", label: "kierował" },
+    { source: "dmowski_roman", target: "owp", label: "założył" },
+    { source: "dmowski_roman", target: "mysli_polaka", label: "napisał" },
+    { source: "dmowski_roman", target: "konferencja_paryska", label: "reprezentował" },
+    { source: "dmowski_roman", target: "pilsudski_jozef", label: "rywalizował" },
+    { source: "pilsudski_jozef", target: "zamach_majowy", label: "przeprowadził" },
+    { source: "mlodziez_wszechpolska", target: "owp", label: "organ" },
+    { source: "mysli_polaka", target: "koncepcja_piastowska", label: "przedstawia" }
+  ]
+};
+
+export const SYSTEM_PROMPT_DMOWSKI = 'Jesteś Romanem Dmowskim w roku 1925. Mówisz wyłącznie po polsku, realistycznie, antyfederacyjnie, piastowsko, z naciskiem na interes narodowy i egoizm narodowy. Odpowiwasz faktami historycznymi, cytujesz własne prace gdy to możliwe. Nie wcielasz się w narratora – jesteś Dmowskim. Nigdy nie łamiesz roli. Nie zmieniaj grafu wiedzy.';

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Endecja KG Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Spectral', 'serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              border: "hsl(var(--border))",
+              input: "hsl(var(--input))",
+              ring: "hsl(var(--ring))",
+              background: "hsl(var(--background))",
+              foreground: "hsl(var(--foreground))",
+              primary: {
+                DEFAULT: "#be123c", // Crimson
+                foreground: "#fafafa",
+              },
+              secondary: {
+                DEFAULT: "#1e3a8a", // Navy
+                foreground: "#fafafa",
+              },
+              accent: {
+                DEFAULT: "#b45309", // Gold
+                foreground: "#fafafa",
+              },
+              muted: {
+                DEFAULT: "#27272a",
+                foreground: "#a1a1aa",
+              },
+              card: {
+                DEFAULT: "#09090b",
+                foreground: "#fafafa",
+              },
+              popover: {
+                DEFAULT: "#09090b",
+                foreground: "#fafafa",
+              },
+              destructive: {
+                DEFAULT: "#7f1d1d",
+                foreground: "#fafafa",
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Spectral:wght@400;600;700&display=swap');
+      
+      :root {
+        --background: 240 10% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 240 10% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 10% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 343 81% 42%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 217 64% 33%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 3.7% 15.9%;
+        --muted-foreground: 240 5% 64.9%;
+        --accent: 38 92% 37%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 3.7% 15.9%;
+        --input: 240 3.7% 15.9%;
+        --ring: 343 81% 42%;
+        --radius: 0.5rem;
+      }
+      
+      body {
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: hsl(var(--background));
+      }
+      ::-webkit-scrollbar-thumb {
+        background: hsl(var(--muted));
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: hsl(var(--muted-foreground));
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^3.4.0",
+    "idb-keyval": "https://aistudiocdn.com/idb-keyval@^6.2.2",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "zustand": "https://aistudiocdn.com/zustand@^5.0.8",
+    "graphology": "https://aistudiocdn.com/graphology@^0.26.0",
+    "react-force-graph-2d": "https://aistudiocdn.com/react-force-graph-2d@^1.29.0",
+    "graphology-metrics/": "https://aistudiocdn.com/graphology-metrics@^2.4.0/",
+    "graphology-communities-louvain": "https://aistudiocdn.com/graphology-communities-louvain@^2.0.2"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
